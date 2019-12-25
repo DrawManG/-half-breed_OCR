@@ -1,0 +1,10 @@
+C:\Users\Пользователь\source\repos\Half-Breed\bin\Debug\Half-Breed.exe.config
+C:\Users\Пользователь\source\repos\Half-Breed\bin\Debug\Half-Breed.exe
+C:\Users\Пользователь\source\repos\Half-Breed\bin\Debug\Half-Breed.pdb
+C:\Users\Пользователь\source\repos\Half-Breed\obj\Debug\Half-Breed.csprojAssemblyReference.cache
+C:\Users\Пользователь\source\repos\Half-Breed\obj\Debug\Half_Breed.OCR_FORM.resources
+C:\Users\Пользователь\source\repos\Half-Breed\obj\Debug\Half_Breed.Properties.Resources.resources
+C:\Users\Пользователь\source\repos\Half-Breed\obj\Debug\Half-Breed.csproj.GenerateResource.cache
+C:\Users\Пользователь\source\repos\Half-Breed\obj\Debug\Half-Breed.csproj.CoreCompileInputs.cache
+C:\Users\Пользователь\source\repos\Half-Breed\obj\Debug\Half-Breed.exe
+C:\Users\Пользователь\source\repos\Half-Breed\obj\Debug\Half-Breed.pdb
