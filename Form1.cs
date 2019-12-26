@@ -33,7 +33,26 @@ namespace Half_Breed
                     label1.Text = Convert.ToString(files.Length);
                     System.Windows.Forms.MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
                 }
+                
+                // тут будет создание таблицы
+                DataTable workTable = new DataTable("Customers");
+                workTable.Columns.Add("№ п/п", typeof(String));
+                workTable.Columns.Add("Номер", typeof(String));
+                workTable.Columns.Add("Дата привоза", typeof(String));
+                workTable.Columns.Add("Исполнитель", typeof(String));
+                workTable.Columns.Add("Наименование выработки", typeof(String));
+                workTable.Columns.Add("Глубина, м", typeof(String));
+                workTable.Columns.Add("Состояние образца", typeof(String));
+                workTable.Columns.Add("Описание", typeof(String));
+                workTable.Columns.Add("Р, бар", typeof(String));
+                workTable.Columns.Add("Р, кН", typeof(String));
+                workTable.Columns.Add("S", typeof(String));
+                dataGridView1.DataSource = new DataView(workTable);
                 // тут будет подключение к питону
+
+                // тут будет создание Парсинг изображений
+                string s = label2.Text + @"\" + label3.Text + ".jpg";
+                pictureBox1.ImageLocation = Path.Combine(s);
             }
         }
 
@@ -42,13 +61,16 @@ namespace Half_Breed
             // кнопка назад
             int numb = Convert.ToInt32(label3.Text);
             numb = numb - 1;
-            if(numb < 0)
+            if(numb <= 0)
             {
                 MessageBox.Show("Ошибка. Вы вышли за лимит");
-                numb = 0;
+                numb = 1;
             }
             label3.Text = Convert.ToString(numb);
-            
+            string s = label2.Text + @"\" + label3.Text + ".jpg";
+            pictureBox1.ImageLocation = Path.Combine(s);
+
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -62,6 +84,8 @@ namespace Half_Breed
                 numb = Convert.ToInt32(label1.Text);
             }
             label3.Text = Convert.ToString(numb);
+            string s = label2.Text + @"\" + label3.Text + ".jpg";
+            pictureBox1.ImageLocation = Path.Combine(s);
         }
     }
 }
