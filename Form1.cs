@@ -33,7 +33,7 @@ namespace Half_Breed
                     label1.Text = Convert.ToString(files.Length);
                     System.Windows.Forms.MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
                 }
-                
+
                 // тут будет создание таблицы
                 DataTable workTable = new DataTable("Customers");
                 workTable.Columns.Add("№ п/п", typeof(String));
@@ -53,8 +53,19 @@ namespace Half_Breed
                 // тут будет создание Парсинг изображений
                 string s = label2.Text + @"\" + label3.Text + ".jpg";
                 pictureBox1.ImageLocation = Path.Combine(s);
+                string ppath = @"C:\temp\path.txt";
+                // This text is added only once to the file.
+                if (!File.Exists(ppath))
+                {
+                    // Create a file to write to.
+                    using (StreamWriter sw = File.CreateText(ppath))
+                    {
+                        sw.WriteLine(label2.Text);
+                    }
+
+                }
             }
-        }
+            }
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -86,6 +97,11 @@ namespace Half_Breed
             label3.Text = Convert.ToString(numb);
             string s = label2.Text + @"\" + label3.Text + ".jpg";
             pictureBox1.ImageLocation = Path.Combine(s);
+        }
+
+        private void OCR_FORM_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            File.Delete(@"C:\temp\path.txt");
         }
     }
 }

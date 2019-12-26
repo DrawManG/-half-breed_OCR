@@ -166,6 +166,7 @@
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "HALF-BREED";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OCR_FORM_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
