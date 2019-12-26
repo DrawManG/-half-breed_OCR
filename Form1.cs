@@ -61,6 +61,7 @@ namespace Half_Breed
                     using (StreamWriter sw = File.CreateText(ppath))
                     {
                         sw.WriteLine(label2.Text);
+                        sw.Close();
                     }
 
                 }
