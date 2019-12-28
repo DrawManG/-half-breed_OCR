@@ -18,16 +18,18 @@ from collections import Counter
 import tempfile
 import re
 import random
-global ii
-ppath = open("C:/temp/path.txt",'r')
+global ppath
+ppath = open(r"C:\temp\path.txt", "r")
+global ip
 ip = ppath.read()
-
 print(ip)
+ppath.close()
+
+global ii
 iis = ""
 
-def open(event):
-    ppath = open("C:/temp/path.txt",'r')
-    ip = ppath.read()
+def open(event):   
+  return
 
 
 def jobs():
@@ -149,7 +151,7 @@ try:
  lbl1.grid(column=2, row= 0)
  #
  jobs()
- im = Image.open(ip + "\\" + str(i) + ".jpg")
+ im = Image.open(ip + "/" + str(i) + ".jpg")
  size = 500,600
  im.thumbnail(size, Image.ANTIALIAS)
  ph = ImageTk.PhotoImage(im)
@@ -199,8 +201,8 @@ try:
  global war
 
  war = []
- inw = os.listdir(ip) - 1
- for filename in inw:
+ print(p)
+ for filename in os.listdir(ip):
   jobs()
   print(numPic, "-------------------------------------------------------------------------------------")
 
@@ -211,42 +213,23 @@ try:
   isa_2 = isa_2 + 3
   isa_3 = isa_3 + 3
   isa_numb = isa_numb + 1
- # else:
-    #  tree.insert("", 0, text=isa_numb,values=(" ", " ", " ", "", "", " ", " ", " ", str(p[isa_1]), str(round(ss222[isa_numb - 1]))))
-     # war.append((isa_numb, " ", " ", " ", "", "", " ", " ", " ", str(p[isa_1]), str(round(ss222[isa_numb - 1]))))
-     # isa_1 += 1
-     # isa_numb += 1
-
-
-
-
-
-
-
-
-
-
-#consolic = Text (window,text = str(war))
-#consolic.grid(column= 4 ,row = 2)
-#tree.insert('num2',"2")
-#============================
-#ww = Label(window, image="C:\\45\\45.jpg")
-#ww.grid(column=3,row=0)
-
 
 except:
     isw = 0
-    ip = ppath.read()
-    for filename in os.listdir(ip):
+    ip2 = ip
+    print(ip2)
+    ppath.close()
+    for filename in os.listdir(ip2):
         isw += 1
         os.rename(os.path.join(ip, filename), os.path.join(ip, str(isw) + '.jpg'))
-    
+    ###
+   
+    ###
 
 
+df = pd.DataFrame(war)
+df.to_excel(excel_writer=(r'C:\temp\table.xlsx'))
+     
 
-
-
-#df = pd.DataFrame(war)
-#df.to_excel(excel_writer='go.xlsx')
 #cv.destroyAllWindows()()
 window.mainloop()
